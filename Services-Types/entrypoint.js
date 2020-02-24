@@ -11,16 +11,16 @@ const serviceTypesRouter = require('./routes/servicesTypesRoutes');
 require('dotenv').config();
 
 const APP_PORT = process.env.APP_PORT || 3000;
-// const KAFKA_CLIENT_ID = process.env.KAFKA_CLIENT_ID;
-// const KAFKA_BROKERS = process.env.BROKERS.split(",");
+const KAFKA_CLIENT_ID = process.env.KAFKA_CLIENT_ID;
+const KAFKA_BROKERS = process.env.BROKERS.split(",");
 
-// const kfConfig = {
-//     clientId: KAFKA_CLIENT_ID,
-//     brokers: KAFKA_BROKERS
-// };
+const kfConfig = {
+    clientId: KAFKA_CLIENT_ID,
+    brokers: KAFKA_BROKERS
+};
 
-// const kafkaProducer = require('./connection/kafka-connection')(kfConfig).producer;
-// const kafkaConsumer = require('./connection/kafka-connection')(kfConfig).consumer;
+const kafkaProducer = require('./connection/kafka-connection')(kfConfig).producer;
+const kafkaConsumer = require('./connection/kafka-connection')(kfConfig).consumer;
 
 const app = express();
 
