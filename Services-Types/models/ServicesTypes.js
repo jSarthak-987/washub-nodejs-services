@@ -23,11 +23,6 @@ module.exports = (sequelize, Sequelize) => {
   }, {
     timestamp: false
   });
-
-  ServicesTypes.associate = function(models) {    
-        ServicesTypes.hasMany(models.servicesubtype, {
-            foreignKey: 'parenthash',
-        })
-  };
+  
   return ServicesTypes;
 };
