@@ -11,12 +11,12 @@ module.exports = () => {
 
         if(searchType == 'id'){
             let id = req.query.id;
-            laundryTypesController.selectById(req, res, id);
+            laundryTypesController.selectByLaundryTypeId(req, res, id);
         }
 
         else if(searchType == 'name'){
             let name = req.query.name;
-            laundryTypesController.selectByName(req, res, name);
+            laundryTypesController.selectByLaundryType(req, res, name);
         }
 
         else if(searchType == 'all') {

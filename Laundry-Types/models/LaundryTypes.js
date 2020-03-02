@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
       unique: true
     },
     
-    laundryname: {
+    laundrytype: {
         type: Sequelize.STRING(300),
         allowNull: false,
         unique: true

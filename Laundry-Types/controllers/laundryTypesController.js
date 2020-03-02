@@ -15,8 +15,6 @@ const errorHandler = (err) => {
 
 module.exports = {
     insert(req, res) {
-    
-
         const laundryTypes = req.body;
 
         return LaundryTypes
@@ -34,7 +32,7 @@ module.exports = {
                 .catch((err) => res.status(400).send(errorHandler(err)));
     },
 
-    selectById(req, res, reqId) {
+    selectByLaundryTypeId(req, res, reqId) {
         return LaundryTypes
                 .findAll({
                     where: {
@@ -45,11 +43,11 @@ module.exports = {
                 .catch((err) => res.status(400).send(errorHandler(err)));
     },
 
-    selectByName(req, res, reqName) {
+    selectByLaundryType(req, res, reqType) {
         return LaundryTypes
                 .findAll({
                     where: {
-                        laundryname: reqName
+                        laundrytype: reqType
                     }
                 })
                 .then((laundryTypes) => res.status(200).send(laundryTypes))
