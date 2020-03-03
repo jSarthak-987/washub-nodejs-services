@@ -4,6 +4,9 @@
   "description": "Service for Laundry subtypes",
   "main": "entrypoint.js",
   "scripts": {
+    "start:dev": "nodemon entrypoint.js",
+    "sequelize-migrate": "sequelize db:migrate",
+    "sequelize-unmigrate": "sequelize db:migrate:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sarthak Joshi",
